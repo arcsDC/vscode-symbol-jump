@@ -1,0 +1,48 @@
+{
+  "name": "vscode-symbol-jump",
+  "displayName": "Symbol Jump",
+  "description": "A VS Code extension that jumps to the next or previous symbol in the active file using keyboard shortcuts.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "symbolJump.next",
+        "title": "Jump to Next Symbol"
+      },
+      {
+        "command": "symbolJump.prev",
+        "title": "Jump to Previous Symbol"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "symbolJump.next",
+        "key": "alt+down",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "symbolJump.prev",
+        "key": "alt+up",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
